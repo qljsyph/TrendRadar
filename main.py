@@ -3543,10 +3543,11 @@ def send_to_dingtalk(
                 # 如果没有统计标题，直接在开头添加
                 batch_content = batch_header + batch_content
 
+        # 移除标题中的项目名以避免在会话列表显示“TrendRadar”标记
         payload = {
             "msgtype": "markdown",
             "markdown": {
-                "title": f"TrendRadar 热点分析报告 - {report_type}",
+                "title": f"热点分析报告 - {report_type}",
                 "text": batch_content,
             },
         }
