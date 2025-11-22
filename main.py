@@ -3517,7 +3517,7 @@ def send_to_dingtalk(
     batches = split_content_into_batches(
         report_data,
         "dingtalk",
-        update_info,
+        update_info=None,
         max_bytes=CONFIG.get("DINGTALK_BATCH_SIZE", 20000),
         mode=mode,
     )
